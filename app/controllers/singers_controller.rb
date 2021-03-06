@@ -62,6 +62,11 @@ class SingersController < ApplicationController
   end
 
   def send_text
+    print(params)
+    params["recipient"]["ids"].reject(&:empty?).each do |id|
+      singer = Singer.find_by(id: id)
+      print(singer.phone_number)
+    end
   end
 
   private
