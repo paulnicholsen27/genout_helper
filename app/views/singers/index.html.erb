@@ -20,7 +20,7 @@
         <td><%= number_to_phone(singer.phone_number) %></td>
         <td><%= link_to 'Show', singer %></td>
         <td><%= link_to 'Edit', edit_singer_path(singer) %></td>
-        <td><%= link_to 'Destroy', singer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove', singer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
