@@ -1,0 +1,35 @@
+<%= form_with(url: send_text_path) do |form| %>
+<% if false  %>
+  <% if singer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(singer.errors.count, "error") %> prohibited this singer from being saved:</h2>
+
+      <ul>
+        <% singer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <% end %>
+ 
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+  </div>
+
+  <h4>Recipients</h4>
+
+    <div class="form-check">
+
+        <%= collection_check_boxes(:recipient, :ids, @singers, :id, :first_name) do |b| %>
+            <%= b.label  do %>
+                <%= b.check_box class: "form-check-input" %>
+                <%= b.text %> 
+            <% end %>
+        <% end %>
+    </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

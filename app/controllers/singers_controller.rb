@@ -56,6 +56,14 @@ class SingersController < ApplicationController
     end
   end
 
+  def text
+    @singers = Singer.all
+    render :text_form
+  end
+
+  def send_text
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_singer
