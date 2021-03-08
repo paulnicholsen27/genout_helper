@@ -15,6 +15,10 @@
  
   <div class="field">
     <%= form.label :message %>
+    <small id="passwordHelpBlock" class="form-text text-muted">
+        <div>To substitute the recipient's name, use the word FIRSTNAME.</div>
+        <div>Ex:  "Hi FIRSTNAME!  Don't forget to practice your music!" becomes "Hi Pat!  Don't forget to practice your music!"</div>
+    </small>
     <%= form.text_area :message %>
   </div>
 
