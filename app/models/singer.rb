@@ -5,6 +5,11 @@ class Singer < ApplicationRecord
         validates :phone_number, presence: true, phone: true
 
         def phone_number=(str) 
-            @phone_number = str.tr('^0-9', '')
+            super(Phonelib.parse(str, "US").full_e164
+            )
+        end
+
+        def display_phone_number
+            Phonelib.parse(self.phone_number).full_national
         end
 end

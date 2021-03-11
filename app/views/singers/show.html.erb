@@ -12,7 +12,7 @@
 
 <p>
   <strong>Phone number:</strong>
-  <%= number_to_phone(@singer.phone_number) %>
+  <%= @singer.display_phone_number %>
 </p>
 
 <%= link_to 'Edit', edit_singer_path(@singer) %> |
