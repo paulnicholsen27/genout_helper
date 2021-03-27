@@ -3,7 +3,7 @@ class Singer < ApplicationRecord
         validates :first_name, presence: true
         validates :last_name, presence: true
         validates :phone_number, presence: true, phone: true
-
+        
         def phone_number=(str) 
             super(Phonelib.parse(str, "US").full_e164
             )

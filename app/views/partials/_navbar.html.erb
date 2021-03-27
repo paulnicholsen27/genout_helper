@@ -8,7 +8,7 @@
         <a class="nav-link active" aria-current="page" href="#">Home</a>
         <a class="nav-link" href=<%= text_path %>>Send Text</a>
         <a class="nav-link" href=<%= singers_path %>>Manage Singers</a>
-        <a class="nav-link" href=<%= logout_path %>>Logout</a>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete , class: "nav-link" %>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     
     def send_text?
-        return false
+        return false # TODO Fix this
     end
 
     # def authorized_only
