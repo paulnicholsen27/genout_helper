@@ -1,6 +1,6 @@
 class SingersController < ApplicationController
   before_action :set_singer, only: %i[ show edit update destroy ]
-  before_action :authorized_only
+  # before_action :authorized_only
 
   # GET /singers or /singers.json
   def index

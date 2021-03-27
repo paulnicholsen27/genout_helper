@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
         return false
     end
 
-    def authorized_only
-        if !helpers.logged_in?
-            flash[:message] = "Please login first"
-            redirect_to login_path 
-        end
-    end
+    # def authorized_only
+    #     if !helpers.logged_in?
+    #         flash[:message] = "Please login first"
+    #         redirect_to login_path 
+    #     end
+    # end
 
 end
