@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
         return false # TODO Fix this
     end
 
-    # def authorized_only
-    #     if !helpers.logged_in?
-    #         flash[:message] = "Please login first"
-    #         redirect_to login_path 
-    #     end
-    # end
+    def admin_only
+        if !current_user.admin
+            flash[:notice] = "Only admins can access that section of the site."
+            redirect_to singers_path 
+        end
+    end
 
 end

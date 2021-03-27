@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :singers
   get "/text", to: "singers#text"
   post "/send_text", to: "singers#send_text"
+  get "/approve_users", to: "users#index"
+  get "/approve_user/:id", to: "users#approve_user", as: "approve_user"
   root to: "singers#index" #TODO set to real homepage
   # get "/users/sign_out", to: "devise/sessions#destroy", as: "logout" 
   # get "/login", to: "sessions#login_form"
