@@ -73,7 +73,7 @@ class SingersController < ApplicationController
       singer = Singer.find_by(id: id)
       from = Rails.application.credentials.twilio[:phone_number]
       to = singer.phone_number
-      message = params["message"].gsub("FIRSTNAME", singer.first_name)
+      message = params["message"].gsub("{FIRSTNAME}", singer.first_name)
       if send_text? # set on ApplicationController
         client.messages.create(
           from: from,
