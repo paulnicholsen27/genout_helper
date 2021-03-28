@@ -1,7 +1,8 @@
 
 let getTextBox = () => {return $( "#message" ) }
 
-let insertFirstName = () => {
+let insertFirstName = (e) => {
+    e.preventDefault()
     let textBox = getTextBox()
 
     var cursorPos = textBox.prop('selectionStart');
