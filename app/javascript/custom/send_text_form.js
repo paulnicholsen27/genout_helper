@@ -25,7 +25,7 @@ function confirmSubmission() {
     
     var recipient_ids = [];
     let recipient_name_list = $("#recipient-list")
-    recipient_name_list.html(""
+    recipient_name_list.html("")
     $.each($("input[name='recipient[ids][]']:checked"), function(){
         recipient_ids.push($(this).val());
         let current_name = $(this).parent().text().trim()
@@ -46,11 +46,20 @@ function hideModal() {
     $(".modal").addClass('fade').hide()
 }
 
+function toggleSelectAll(){
+    // let selectAllCheckBox = $("#select-all")
+    // let singerBoxes = $("input.singer")
+    // singerBoxes.each(box => box.checked = selectAllCheckBox.checked)
+    console.log('select all')
+    $('input:checkbox').not(this).attr('checked', this.checked);
+}
+
 function setUpPage() {
     $("#first_name_button").click(insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
     $("#modal-cancel").on("click", hideModal)
+    $("#select-all").on('click', toggleSelectAll)
 }
 
 $(document).ready(function(){

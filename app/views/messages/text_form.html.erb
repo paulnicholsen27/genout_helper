@@ -23,8 +23,8 @@
         </div>
 
         <% @singers.each do |singer| %>
-          <div>
-            <input type="checkbox" name="recipient[ids][]" class="form-check-input" value=<%= singer.id %>>
+          <div id="singer-list">
+            <input type="checkbox" name="recipient[ids][]" class="singer form-check-input" value=<%= singer.id %>>
             <label><%= singer.full_name %></label>
           </div>
         <% end %>
