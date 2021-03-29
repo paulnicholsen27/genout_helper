@@ -25,7 +25,7 @@ function confirmSubmission() {
     
     var recipient_ids = [];
     let recipient_name_list = $("#recipient-list")
-
+    recipient_name_list.html(""
     $.each($("input[name='recipient[ids][]']:checked"), function(){
         recipient_ids.push($(this).val());
         let current_name = $(this).parent().text().trim()
