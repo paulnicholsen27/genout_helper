@@ -1,3 +1,4 @@
+const names = ["Buffy", "Willow", "Giles", "Xander", "Spike", "Drusilla", "Dawn", "Tara", "Anya", "Cordelia", "Angel", "Joyce", "Harmony", "Glory", "Faith", "Riley", "Jesse"]
 
 let getTextBox = () => {return $( "#message" ) }
 
@@ -14,13 +15,24 @@ let insertFirstName = (e) => {
 
 }
 
-
-
-function addHandlers() {
-    $( "#first_name_button" ).on("click", insertFirstName);
+function confirmSubmission(e) {
+    e.preventDefault()
+    let name = names[Math.floor(Math.random() * names.length)];
+    let textBox = getTextBox()
+    let raw_message = textBox.val();
+    let formatted_message = raw_message.replace("{FIRSTNAME}", name)
+    if(!confirm("Your message is: \n" + formatted_message + "\nDoes this look OK?")) {
+        return false;
+      }
+    this.submit()
 }
 
-$(document).on("ready", function(){
+function addHandlers() {
+    $("#first_name_button").on("click", insertFirstName);
+    $("#send-text-form").on("submit", confirmSubmission)
+}
+
+$(document).ready(function(){
     addHandlers()
     }
 )
