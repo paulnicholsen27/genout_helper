@@ -15,21 +15,38 @@ let insertFirstName = (e) => {
 
 }
 
-function confirmSubmission(e) {
-    e.preventDefault()
-    let name = names[Math.floor(Math.random() * names.length)];
+function confirmSubmission() {
+    let fake_name = names[Math.floor(Math.random() * names.length)];
     let textBox = getTextBox()
     let raw_message = textBox.val();
-    let formatted_message = raw_message.replace("{FIRSTNAME}", name)
-    if(!confirm("Your message is: \n\n" + formatted_message + "\n\nDoes this look OK?")) {
-        return false;
-      }
-    this.submit()
+    let example_message = raw_message.replace("{FIRSTNAME}", fake_name)
+    console.log("Message is: " + example_message)
+    $("#modal-message").text(example_message)
+    
+    var recipient_ids = [];
+    let recipient_name_list = $("#recipient-list")
+
+    $.each($("input[name='recipient[ids][]']:checked"), function(){
+        recipient_ids.push($(this).val());
+        let current_name = $(this).parent().text().trim()
+        console.log(current_name)
+        var li = $("<li/>")
+        $(li).text(current_name)
+        $(li).appendTo(recipient_name_list)
+        });
+    $(".modal").removeClass('fade')
+    $(".modal").show()
+
+    
+}
+
+function submitForm(message, recipient_ids) {
+    $(form).submit()
 }
 
 function addHandlers() {
     $("#first_name_button").click(insertFirstName);
-    $("#send-text-form").on("submit", confirmSubmission)
+    $("#submitBtn").on("click", confirmSubmission)
 }
 
 $(document).ready(function(){
