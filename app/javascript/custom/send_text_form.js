@@ -21,7 +21,7 @@ function confirmSubmission(e) {
     let textBox = getTextBox()
     let raw_message = textBox.val();
     let formatted_message = raw_message.replace("{FIRSTNAME}", name)
-    if(!confirm("Your message is: \n" + formatted_message + "\nDoes this look OK?")) {
+    if(!confirm("Your message is: \n\n" + formatted_message + "\n\nDoes this look OK?")) {
         return false;
       }
     this.submit()
