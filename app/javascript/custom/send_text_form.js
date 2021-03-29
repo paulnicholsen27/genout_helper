@@ -47,11 +47,7 @@ function hideModal() {
 }
 
 function toggleSelectAll(){
-    // let selectAllCheckBox = $("#select-all")
-    // let singerBoxes = $("input.singer")
-    // singerBoxes.each(box => box.checked = selectAllCheckBox.checked)
-    console.log('select all')
-    $('input:checkbox').not(this).attr('checked', this.checked);
+    $('input:checkbox').not(this).prop('checked', this.checked);
 }
 
 function setUpPage() {
