@@ -46,7 +46,7 @@ function hideModal() {
     $(".modal").addClass('fade').hide()
 }
 
-function addHandlers() {
+function setUpPage() {
     $("#first_name_button").click(insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
@@ -54,7 +54,7 @@ function addHandlers() {
 }
 
 $(document).ready(function(){
-    addHandlers()
+    setUpPage()
     }
 )
 

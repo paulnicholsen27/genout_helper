@@ -1,29 +1,7 @@
-<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                Confirm Submit
-            </div>
-            <div class="modal-body">
-                Are you sure you want to send the following text:
+<%= render partial: "confirm_text_modal" %>
 
-                <div id="modal-message">
-                </div>
 
-                to the following people:
-
-                <ul id="recipient-list">
-                </ul>
-
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-cancel">Cancel</button>
-                <a href="#" id="modal-submit" class="btn btn-success success">Submit</a>
-            </div>
-        </div>
-    </div>
-</div><%= form_with(url: send_text_path, id: 'send-text-form')  do |form| %>
+<%= form_with(url: send_text_path, id: 'send-text-form')  do |form| %>
 
  
   <div class="field">
