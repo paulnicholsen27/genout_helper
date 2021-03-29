@@ -17,7 +17,7 @@
 
     <div class="form-check">
 
-        <%= collection_check_boxes(:recipient, :ids, @singers, :id, :first_name) do |b| %>
+        <%= collection_check_boxes(:recipient, :ids, @singers, :id, :full_name) do |b| %>
             <%= b.label  do %>
                 <%= b.check_box class: "form-check-input" %>
                 <%= b.text %> 

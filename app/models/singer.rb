@@ -12,4 +12,8 @@ class Singer < ApplicationRecord
         def display_phone_number
             Phonelib.parse(self.phone_number).full_national
         end
+
+        def full_name 
+            return "#{self.first_name} #{self.last_name}"
+        end
 end
