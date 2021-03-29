@@ -29,24 +29,28 @@ function confirmSubmission() {
     $.each($("input[name='recipient[ids][]']:checked"), function(){
         recipient_ids.push($(this).val());
         let current_name = $(this).parent().text().trim()
-        console.log(current_name)
         var li = $("<li/>")
         $(li).text(current_name)
         $(li).appendTo(recipient_name_list)
         });
-    $(".modal").removeClass('fade')
-    $(".modal").show()
-
-    
+    $(".modal").removeClass('fade').show()
 }
 
-function submitForm(message, recipient_ids) {
-    $(form).submit()
+function submitForm(e) {
+    console.log('what what')
+    e.preventDefault()
+    $("form").submit()
+}
+
+function hideModal() {
+    $(".modal").addClass('fade').hide()
 }
 
 function addHandlers() {
     $("#first_name_button").click(insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
+    $("#modal-submit").on("click", submitForm)
+    $("#modal-cancel").on("click", hideModal)
 }
 
 $(document).ready(function(){
