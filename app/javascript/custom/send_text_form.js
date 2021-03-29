@@ -17,10 +17,10 @@ let insertFirstName = (e) => {
 
 
 function addHandlers() {
-    $( "#first_name_button" ).click(insertFirstName);
+    $( "#first_name_button" ).on("click", insertFirstName);
 }
 
-$(document).ready(function(){
+$(document).on("ready", function(){
     addHandlers()
     }
 )
