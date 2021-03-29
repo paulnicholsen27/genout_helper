@@ -90,6 +90,8 @@ class SingersController < ApplicationController
         )
         end
     end
+    flash[:notice] = "Message sent successfully."
+    redirect_to singers_path
   end
 
   private

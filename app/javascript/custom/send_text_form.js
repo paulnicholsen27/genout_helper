@@ -28,7 +28,7 @@ function confirmSubmission(e) {
 }
 
 function addHandlers() {
-    $("#first_name_button").on("click", insertFirstName);
+    $("#first_name_button").click(insertFirstName);
     $("#send-text-form").on("submit", confirmSubmission)
 }
 
