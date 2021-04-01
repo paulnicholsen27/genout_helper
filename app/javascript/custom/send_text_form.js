@@ -51,7 +51,7 @@ function toggleSelectAll(){
 }
 
 function setUpPage() {
-    $("#first_name_button").click(insertFirstName);
+    $("#first_name_button").on("click", insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
     $("#modal-cancel").on("click", hideModal)
