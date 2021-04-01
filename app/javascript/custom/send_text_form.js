@@ -20,10 +20,10 @@ function confirmSubmission() {
     let textBox = getTextBox()
     let raw_message = textBox.val();
     let example_message = raw_message.replace("{FIRSTNAME}", fake_name)
-    console.log("Message is: " + example_message)
     $("#modal-message").text(example_message)
     
     var recipient_ids = [];
+
     let recipient_name_list = $("#recipient-list")
     recipient_name_list.html("")
     $.each($("input[name='recipient[ids][]']:checked"), function(){
@@ -33,11 +33,14 @@ function confirmSubmission() {
         $(li).text(current_name)
         $(li).appendTo(recipient_name_list)
         });
+    if (!(raw_message && recipient_ids.length)) {
+        alert("You must provide a message and at least one recipient")
+        return false
+    }
     $(".modal").removeClass('fade').show()
 }
 
 function submitForm(e) {
-    console.log('what what')
     e.preventDefault()
     $("form").submit()
 }
