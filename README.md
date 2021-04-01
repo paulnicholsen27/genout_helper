@@ -1,3 +1,3 @@
 # To do
 
-- form validation for send text
+- approve_users page / permissions
