@@ -1,3 +1,6 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.blur {
+    -webkit-filter: blur(5px) grayscale(90%);
+}

@@ -38,6 +38,8 @@ function confirmSubmission() {
         return false
     }
     $(".modal").removeClass('fade').show()
+    $("#send-text-form").addClass('blur')
+
 }
 
 function submitForm(e) {
@@ -47,6 +49,7 @@ function submitForm(e) {
 
 function hideModal() {
     $(".modal").addClass('fade').hide()
+    $("#send-text-form").removeClass('blur')
 }
 
 function toggleSelectAll(){
