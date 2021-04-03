@@ -54,6 +54,7 @@ function toggleSelectAll(){
 }
 
 function setUpPage() {
+    console.log("page set up called")
     $("#first_name_button").on("click", insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
@@ -61,8 +62,10 @@ function setUpPage() {
     $("#select-all").on('click', toggleSelectAll)
 }
 
-$(document).ready(function(){
+$(function(){
+    console.log("document ready")
     setUpPage()
     }
 )
 
+$(document).on('turbolinks:load', setUpPage);
