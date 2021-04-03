@@ -57,7 +57,6 @@ function toggleSelectAll(){
 }
 
 function setUpPage() {
-    console.log("page set up called")
     $("#first_name_button").on("click", insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
@@ -66,7 +65,6 @@ function setUpPage() {
 }
 
 $(function(){
-    console.log("document ready")
     setUpPage()
     }
 )
