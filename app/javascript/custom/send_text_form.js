@@ -7,11 +7,16 @@ let insertFirstName = (e) => {
     let textBox = getTextBox()
 
     var cursorPos = textBox.prop('selectionStart');
+    // debugger
     var v = textBox.val();
     var textBefore = v.substring(0,  cursorPos);
     var textAfter  = v.substring(cursorPos, v.length);
+    let textToInsert = "{FIRSTNAME} "
+    textBox.val(textBefore + textToInsert + textAfter);
+    cursorPos += textToInsert.length
+    textBox.focus();
+    textBox[0].setSelectionRange(cursorPos, cursorPos);
 
-    textBox.val(textBefore + "{FIRSTNAME}" + textAfter);
 
 }
 
@@ -63,10 +68,5 @@ function setUpPage() {
     $("#modal-cancel").on("click", hideModal)
     $("#select-all").on('click', toggleSelectAll)
 }
-
-$(function(){
-    setUpPage()
-    }
-)
 
 $(document).on('turbolinks:load', setUpPage);

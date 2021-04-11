@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     
     def send_text?
-        return false # TODO Fix this
+        return true # TODO Fix this
     end
 
     def admin_only

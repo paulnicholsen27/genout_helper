@@ -1,5 +1,11 @@
    <table>
+   <tr>
+    <th>Email</th>
+    <th>Approved?</th>
+    <th>Admin?</th>
+  </tr>
     <% @users.each do |user| %>
+      
       <tr>
         <td><%= user.email %></td>
         <td><%= user.approved %></td>
