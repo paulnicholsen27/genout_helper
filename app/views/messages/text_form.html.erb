@@ -19,14 +19,19 @@
         <div class="form-check">
 
             <div>
-              <input type="checkbox" class="form-check-input" id="select-all" name="all">
-              <label class="form-check-label" for="all"> Select All</label>
+              
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="select-all" name="all">
+                  Select All
+              </label>
             </div> 
 
             <% @singers.each do |singer| %>
               <div id="singer-list">
-                <input type="checkbox" name="recipient[ids][]" class="singer form-check-input" value=<%= singer.id %>>
-                <label class="form-check-label"><%= singer.full_name %></label>
+                <label class="form-check-label">
+                  <input type="checkbox" name="recipient[ids][]" class="singer form-check-input" value=<%= singer.id %>>
+                    <%= singer.full_name %>
+                </label>
               </div>
             <% end %>
 
