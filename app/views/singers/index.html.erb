@@ -1,13 +1,13 @@
 
-<h1>Singers</h1>
+<h3>Singers</h3>
 
-<table>
+<table class="table table-hover">
   <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Phone number</th>
-      <th colspan="3"></th>
+    <tr class="table-active">
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Phone number</th>
+      <th scope="col"></th>
     </tr>
   </thead>
 
@@ -17,9 +17,7 @@
         <td><%= singer.first_name %></td>
         <td><%= singer.last_name %></td>
         <td><%= number_to_phone(singer.display_phone_number) %></td>
-        <td><%= link_to 'Show', singer %></td>
-        <td><%= link_to 'Edit', edit_singer_path(singer) %></td>
-        <td><%= link_to 'Remove', singer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', singer %> | <%= link_to 'Edit', edit_singer_path(singer) %> | <%= link_to 'Remove', singer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Singer', new_singer_path %>
+<%= button_to 'New Singer', new_singer_path, class: "btn btn-primary", method: "get" %>
