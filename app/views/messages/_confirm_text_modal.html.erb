@@ -1,19 +1,18 @@
 <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog card border-danger mb-3">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header card-header">
                 Confirm Submit
             </div>
-            <div class="modal-body">
+            <div class="modal-body card-body">
+
                 <div>This is what your message will look like:</div>
 
-                <div id="modal-message">
-                </div>
+                <strong id="modal-message" class="text-danger"></strong>
 
                 <div>and it will be sent to the following people:</div>
 
-                <ul id="recipient-list">
-                </ul>
+                <ul id="recipient-list"></ul>
 
                 <div>Look good?</div>
 
@@ -21,7 +20,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-cancel">Cancel</button>
-                <button href="#" id="modal-submit" class="btn btn-success success">Submit</button>
+                <button href="#" id="modal-submit" class="btn btn-primary primary">Submit</button>
             </div>
         </div>
     </div>
