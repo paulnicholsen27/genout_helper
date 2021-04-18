@@ -16,8 +16,6 @@ let insertFirstName = (e) => {
     cursorPos += textToInsert.length
     textBox.focus();
     textBox[0].setSelectionRange(cursorPos, cursorPos);
-
-
 }
 
 function confirmSubmission() {
