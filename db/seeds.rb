@@ -1,12 +1,26 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
 
+def create_singers(table, active=true)
+    for row in table
+        Singer.create(
+            first_name: row["First Name"],
+            last_name: row["Last Name"],
+            phone_number: row["Cell"],
+            pronoun: row["Pron."],
+            active: active,
+            birthday: Date.strptime(row["Birthday"], '%m/%d/%y')
 
-User.create(email: "paulnicholsen27@gmail.com", password: "password", admin: true, approved: true)
+        )
+    end
+end
 
-Singer.create([{first_name: "Paul", last_name: "Nicholsen", phone_number: "7322664711"}])
+Singer.destroy_all
+
+active_singers = CSV.parse(File.read("active.csv"), headers: true)
+create_singers(active_singers)
+
+inactive_singers = CSV.parse(File.read("inactive.csv"), headers: true)
+create_singers(inactive_singers, false)
+
+alums = CSV.parse(File.read("inactive.csv"), headers: true)
+create_singers(alums, false)
