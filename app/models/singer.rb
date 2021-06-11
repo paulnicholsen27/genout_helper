@@ -16,4 +16,14 @@ class Singer < ApplicationRecord
         def full_name 
             return "#{self.first_name} #{self.last_name}"
         end
+
+        def self.active
+            return Singer.where(active: true)
+        end
+
+        def self.inactive 
+            return Singer.where(active: true)
+        end
+
 end
+

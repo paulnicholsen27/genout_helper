@@ -7,6 +7,9 @@
       <th scope="col">First name</th>
       <th scope="col">Last name</th>
       <th scope="col">Phone number</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Pronoun</th>
+      <th scope="col">Active?</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -17,6 +20,13 @@
         <td><%= singer.first_name %></td>
         <td><%= singer.last_name %></td>
         <td><%= number_to_phone(singer.display_phone_number) %></td>
+        <td><%= singer.birthday %></td>
+        <td><%= singer.pronoun %></td>
+        <% if singer.active? %>
+          <td class="green">Yes</td>
+        <% else %>
+          <td class="gray">No</td>
+        <% end %>
         <td><%= link_to 'Show', singer %> | <%= link_to 'Edit', edit_singer_path(singer) %> | <%= link_to 'Remove', singer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
