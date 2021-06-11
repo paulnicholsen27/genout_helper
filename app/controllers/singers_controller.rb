@@ -102,6 +102,6 @@ class SingersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def singer_params
-      params.require(:singer).permit(:first_name, :last_name, :phone_number)
+      params.require(:singer).permit(:first_name, :last_name, :phone_number, :pronoun, :birthday, :active)
     end
 end

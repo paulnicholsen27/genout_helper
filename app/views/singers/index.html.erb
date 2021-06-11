@@ -1,6 +1,8 @@
 
 <h3>Singers</h3>
 
+<%= button_to 'New Singer', new_singer_path, class: "btn btn-primary", method: "get" %>
+
 <table class="table table-hover">
   <thead>
     <tr class="table-active">
@@ -20,7 +22,7 @@
         <td><%= singer.first_name %></td>
         <td><%= singer.last_name %></td>
         <td><%= number_to_phone(singer.display_phone_number) %></td>
-        <td><%= singer.birthday %></td>
+        <td><%= singer.display_birthday %></td>
         <td><%= singer.pronoun %></td>
         <% if singer.active? %>
           <td class="green">Yes</td>
@@ -35,4 +37,3 @@
 
 <br>
 
-<%= button_to 'New Singer', new_singer_path, class: "btn btn-primary", method: "get" %>

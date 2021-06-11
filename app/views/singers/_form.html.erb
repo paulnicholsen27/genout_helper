@@ -29,6 +29,21 @@
     </small>
   </div>
 
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pronoun %>
+    <%= form.text_field :pronoun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.select :active, [['Active', true], ['Inactive', false]] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

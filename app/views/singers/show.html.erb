@@ -14,5 +14,20 @@
   <%= @singer.display_phone_number %>
 </p>
 
+<p>
+  <strong>Pronoun:</strong>
+  <%= @singer.pronoun %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @singer.display_birthday %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @singer.active ? "Yes" : "No" %>
+</p>
+
 <%= link_to 'Edit', edit_singer_path(@singer) %> |
 <%= link_to 'Back', singers_path %>

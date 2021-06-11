@@ -25,5 +25,12 @@ class Singer < ApplicationRecord
             return Singer.where(active: true)
         end
 
+        def display_birthday 
+            if self[:birthday]
+                return self[:birthday].strftime("%m/%d/%Y")
+            else 
+                return "Unknown"
+            end
+        end
 end
 
