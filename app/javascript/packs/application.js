@@ -8,6 +8,7 @@
 // import * as ActiveStorage from "@rails/activestorage"
 // import "channels"
 require("custom/send_text_form")
+require("custom/sort_table")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
