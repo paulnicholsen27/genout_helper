@@ -15,7 +15,10 @@
       </div>
 
       <h6 class="card-title">Recipients</h6>
-
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="toggle-inactive">
+        <label class="custom-control-label" for="toggle-inactive">Include inactive members</label>
+      </div>
         <div class="form-check">
 
             <div>
@@ -28,7 +31,7 @@
 
             <% @singers.each do |singer| %>
               <div id="singer-list">
-                <label class="form-check-label">
+                <label class="form-check-label <%= singer.active? ? 'active' : 'inactive' %>" >
                   <input type="checkbox" name="recipient[ids][]" class="singer form-check-input" value=<%= singer.id %>>
                     <%= singer.full_name %>
                 </label>
@@ -42,3 +45,4 @@
 
   </div>
 </div>
+

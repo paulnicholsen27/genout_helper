@@ -59,12 +59,17 @@ function toggleSelectAll(){
     $('input:checkbox').not(this).prop('checked', this.checked);
 }
 
+function toggleInactive(){
+    $(".inactive").toggle()
+}
+
 function setUpPage() {
     $("#first_name_button").on("click", insertFirstName);
     $("#submitBtn").on("click", confirmSubmission)
     $("#modal-submit").on("click", submitForm)
     $("#modal-cancel").on("click", hideModal)
     $("#select-all").on('click', toggleSelectAll)
+    $("#toggle-inactive").on('click', toggleInactive)
 }
 
 $(document).on('turbolinks:load', setUpPage);
