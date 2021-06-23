@@ -56,10 +56,11 @@ function hideModal() {
 }
 
 function toggleSelectAll(){
-    $('input:checkbox').not(this).prop('checked', this.checked);
+    $('input:checkbox').not("#toggle-inactive,:hidden").prop('checked', this.checked);
 }
 
 function toggleInactive(){
+    $(".inactive .singer").prop('checked', false)
     $(".inactive").toggle()
 }
 
