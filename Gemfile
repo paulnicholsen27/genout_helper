@@ -59,3 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'twilio-ruby'
 gem 'phonelib'
 gem 'devise'
+gem "font-awesome-rails"
