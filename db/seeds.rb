@@ -22,5 +22,5 @@ create_singers(active_singers)
 inactive_singers = CSV.parse(File.read("inactive.csv"), headers: true)
 create_singers(inactive_singers, false)
 
-alums = CSV.parse(File.read("inactive.csv"), headers: true)
+alums = CSV.parse(File.read("alum.csv"), headers: true)
 create_singers(alums, false)
