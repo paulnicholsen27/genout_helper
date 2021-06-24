@@ -6,7 +6,8 @@ class SingersController < ApplicationController
 
   # GET /singers or /singers.json
   def index
-    @singers = Singer.all
+    @singers = Singer.order(active: :desc, first_name: :asc)
+
   end
 
   # GET /singers/1 or /singers/1.json

@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
 
     def text
-        @singers = Singer.all
+        @singers = Singer.order(active: :desc, first_name: :asc)
+
         render :text_form
       end
     
