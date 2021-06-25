@@ -19,3 +19,8 @@
  .sortable {
      cursor: pointer;
  }
+
+ .page-title {
+     float: left;
+     margin-bottom: 15px;
+ }
