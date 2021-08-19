@@ -24,3 +24,7 @@
      float: left;
      margin-bottom: 15px;
  }
+
+ #main-nav a.nav-link {
+     color: white
+ }
